@@ -21,6 +21,14 @@ O sistema utiliza uma **HAL (Hardware Abstraction Layer)** para garantir que as 
 
 ---
 
+
+
+
+https://github.com/user-attachments/assets/8d953b58-f6f8-40a7-a1b6-d2ac593f9467
+
+
+
+
 ## 📂 Project Structure
 
 ```text
