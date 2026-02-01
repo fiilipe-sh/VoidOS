@@ -18,7 +18,7 @@
 
 #define BLACK 0x07  // Define a cor (0x07 é cinza claro no fundo preto)
 
-// Use 'static' para que essas variáveis fiquem presas apenas aos arquivos que incluírem este header
+
 static int terminal_column = 0;
 static int terminal_row = 0;
 static uint8_t terminal_color = BLACK;
