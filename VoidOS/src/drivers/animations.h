@@ -1,35 +1,54 @@
 #ifndef ANIMATIONS_H
 #define ANIMATIONS_H
 
+#include "timer.h"
 
 
 void firstAnimation(){
 int x = 6;
 int y = 5;
 
+const char* LoadingAnimation[] = {
+	  "[OK] Loading kernel...",
+      "[OK] Initializing memory...",
+      "[OK] Mounting filesystem...",
+      "[OK] Loading drivers...",
+      "[OK] Starting network stack...",
+      "[OK] Initializing security modules...",
+      "[OK] Loading pentest toolkit...",
+      "[OK] System ready."
+};
+
+
+
+
 clearScreen();
-kprint(" .sSSS s.    .sSSSSs.    SSSSS .sSSSSs.         .sSSSSs.    .sSSSSs.",RED,x,y++ );
-kprint(" SSSSS SSSs. SSSSSSSSSs. SSSSS SSSSSSSSSs.      SSSSSSSSSs. SSSSSSSSSs.",RED,x,y++ );
-kprint(" S SSS SSSSS S SSS SSSSS S SSS S SSS SSSSS      S SSS SSSSS S SSS SSSS'",RED,x,y++ );
-kprint(" S  SS SSSSS S  SS SSSSS S  SS S  SS SSSSS      S  SS SSSSS S  SS",RED,x,y++      );
-kprint(" S..SS SSSSS S..SS SSSSS S..SS S..SS SSSSS      S..SS SSSSS `SSSSsSSSa.",RED,x,y++ );
-kprint("  S::S SSSS  S:::S SSSSS S:::S S:::S SSSSS      S:::S SSSSS .sSSS SSSSS",RED,x,y++ );
-kprint("   S;S SSS   S;;;S SSSSS S;;;S S;;;S SSSSS      S;;;S SSSSS S;;;S SSSSS",RED,x,y++ );
-kprint("    SS SS    S%%%S SSSSS S%%%S S%%%S SSSS'      S%%%S SSSSS S%%%S SSSSS",RED,x,y++ );
-kprint("     SsS     SSSSSsSSSSS SSSSS SSSSSsS;:'       SSSSSsSSSSS SSSSSsSSSSS",RED,x,y++ );
-kprint(" [*]PRECIONE ENTER PARA INICIAR:                                      ",GREEN,x,y++ );
+kprint("\xDB\xDB\xBB   \xDB\xDB\xBB \xDB\xDB\xDB\xDB\xDB\xDB\xBB \xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xBB      \xDB\xDB\xDB\xDB\xDB\xBB  \xDB\xDB\xDB\xDB\xDB\xDB\xBB", WHITE, x, y++);
+    kprint("\xDB\xDB\xBA   \xDB\xDB\xBA\xDB\xDB\xC9\xCA\xCA\xDB\xDB\xBB\xDB\xDB\xBA\xDB\xDB\xC9\xCA\xCA\xDB\xDB\xBB     \xDB\xDB\xC9\xCA\xCA\xDB\xBB\xDB\xDB\xC9\xCA\xCA\xCA\xCA\xBC", WHITE, x, y++);
+    kprint("\xDB\xDB\xBA   \xDB\xDB\xBA\xDB\xDB\xBA   \xDB\xDB\xBA\xDB\xDB\xBA\xDB\xDB\xBA  \xDB\xDB\xBA     \xDB\xDB\xBA  \xDB\xDB\xBA\xDB\xDB\xDB\xDB\xDB\xBB ", WHITE, x, y++);
+    kprint("\xC8\xDB\xDB\xBB \xDB\xDB\xC9\xBC\xDB\xDB\xBA   \xDB\xDB\xBA\xDB\xDB\xBA\xDB\xDB\xBA  \xDB\xDB\xBA     \xDB\xDB\xBA  \xDB\xDB\xBA\xC8\xCA\xCA\xCA\xDB\xDB\xBB", WHITE, x, y++);
+    kprint(" \xC8\xDB\xDB\xDB\xDB\xC9\xBC \xC8\xDB\xDB\xDB\xDB\xDB\xDB\xC9\xBC\xDB\xDB\xBA\xDB\xDB\xDB\xDB\xDB\xDB\xC9\xBC     \xC8\xDB\xDB\xDB\xDB\xDB\xBB\xDB\xDB\xDB\xDB\xDB\xDB\xBB", WHITE, x, y++);
+    kprint("  \xC8\xCA\xCA\xCA\xCA\xBC   \xC8\xCA\xCA\xCA\xCA\xCA\xBC \xC8\xCA\xBC\xC8\xCA\xCA\xCA\xCA\xCA\xBC       \xC8\xCA\xCA\xCA\xCA\xBC\xC8\xCA\xCA\xCA\xCA\xCA\xCA\xBC", WHITE, x, y++);
+	
+ for(int i = 0; i < 8; ++i){
+	  sleep(100000);
+	 kprint(LoadingAnimation[i],GREEN,x,y++);
+	
+ }
+
+
+
+
+
+
 
 
 }
 
 
 
-
-
-
-
-
-
-
-
 #endif
+
+
+
+      

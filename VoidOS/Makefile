@@ -18,7 +18,7 @@ ISO_DIR = iso_root
 LINKER_SCRIPT := $(shell find . -name linker.ld | head -n 1)
 
 # Lista de Objetos
-OBJS = boot.o kernel.o keyboard.o vga.o
+OBJS = boot.o kernel.o keyboard.o vga.o timer.o
 
 # Alvo padrão
 all: $(ISO_NAME)
@@ -59,6 +59,9 @@ keyboard.o: src/drivers/keyboard.cpp
 
 vga.o: src/drivers/vga.cpp
 	$(CXX) $(CXXFLAGS) -c src/drivers/vga.cpp -o vga.o
+
+timer.o: src/drivers/timer.cpp
+	g++ -m32 -Isrc -ffreestanding -O2 -fno-exceptions -fno-rtti -c src/drivers/timer.cpp -o timer.o
 
 # Comandos Úteis
 run: $(ISO_NAME)
