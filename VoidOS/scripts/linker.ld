@@ -24,7 +24,7 @@ SECTIONS
         *(.data)
     }
 
-    /* Espaço para a Pilha (Stack) e variáveis globais */
+    
     .bss BLOCK(4K) : ALIGN(4K)
     {
         *(COMMON)
